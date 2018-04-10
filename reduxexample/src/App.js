@@ -46,26 +46,22 @@ class App extends Component {
     ]})
   }
 
-  componentWillMount() {
-    this.getProjects();
-  }
-
   componentDidMount() {
     this.getProjects();
     this.getToDos()
   }
 
   handleAddProject(project) {
-    let projects = this.state.projects;
-    projects.push(project);
-    this.setState({projects: projects});
+    this.setState({
+      projects: [...this.state.projects, ...[project]]
+    });
   }
 
   handleDeleteProject(id) {
-    let projects = this.state.projects;
-    let index = projects.findIndex(project => project.id === id);
-    projects.splice(index, 1);
-    this.setState({projects: projects});
+    this.setState({
+      projects: [
+        ...this.state.projects.filter(project => project.id !== id)]
+    });
   }
 
   render() {
