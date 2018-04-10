@@ -53,7 +53,7 @@ class App extends Component {
 
   handleAddProject(project) {
     this.setState({
-      projects: [...this.state.projects, ...[project]]
+      projects: [...this.state.projects, ...project]
     });
   }
 
