@@ -1,4 +1,32 @@
 import React, { Component } from 'react';
+import Posts from './components/posts';
+import PostForm from './components/postform';
+
+import './App.css';
+
+import { Provider } from 'react-redux';
+import store from './store';
+
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <div className="App">
+          <PostForm />
+          <hr />
+          <Posts />
+        </div>
+      </Provider>
+    )
+  }
+}
+
+export default App;
+
+
+
+/*  react-only stuff 
+import React, { Component } from 'react';
 import Projects from './components/projects';
 import AddProject from './components/addProject';
 import ToDo from './components/todo';
@@ -76,4 +104,4 @@ class App extends Component {
   }
 }
 
-export default App;
+*/
